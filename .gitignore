@@ -1,40 +1,72 @@
-# Node modules
-/node_modules/
+# -------------------------------
+# Node / Angular
+# -------------------------------
 
-# Angular build output
+/node_modules/
 /dist/
 /out-tsc/
 /.angular/cache/
 
-# Environment files (optional, but usually not committed)
+# Coverage reports
+/coverage/
+
+# Environment files (optional)
 /src/environments/*.ts
 
-# IDEs and editors
+# Angular CLI generated files
+.angular/
+
+# -------------------------------
+# IDEs / Editors
+# -------------------------------
+
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
+# -------------------------------
 # Logs
+# -------------------------------
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# -------------------------------
 # OS generated files
+# -------------------------------
+
 .DS_Store
 Thumbs.db
 
-# Temporary files
+# -------------------------------
+# Temporary / swap / lock files
+# -------------------------------
+
 *.tmp
 *.swp
 *.lock
 
-# Coverage reports
-/coverage/
+# -------------------------------
+# ESLint / Prettier / Formatting
+# -------------------------------
 
-# Angular CLI generated files
-.angular/
+# ESLint cache
+.eslintcache
 
+# Prettier cache
+.prettierignore
+.prettiercache
+
+# Optional: if you want to ignore package-lock or yarn.lock
 package-lock.json
 yarn.lock
+
+# -------------------------------
+# Optional IDE specific
+# -------------------------------
+
+*.log
+*.tsbuildinfo
 
