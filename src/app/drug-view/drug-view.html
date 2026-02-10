@@ -1,0 +1,65 @@
+<section class="drug-card">
+    <header class="drug-header">
+        <h1>{{ drug.name }}</h1>
+
+        @if(drug.latinName || drug.frenchName) {
+        <div class="names">
+            @if(drug.latinName; as latinName) { <span><em>{{ latinName }}</em></span> }
+            @if(drug.frenchName; as frenchName) { <span> — {{ frenchName }}</span> }
+        </div>
+        }
+
+        @if(drug.alternativeChineseNames?.length) {
+        <div class="alt-names">
+            <strong>Noms alternatifs :</strong>
+            @for(n of drug.alternativeChineseNames; track n; let last = $last) {
+            {{ n }}@if(!last) {, }
+            }
+        </div>
+        }
+
+        <div class="stars">
+            @for(i of [].constructor(drug.numberOfStars); track i) { ★ }
+        </div>
+    </header>
+
+    <div class="grid">
+        <div>
+            <strong>Nature</strong>
+            <div>{{ drug.nature ? natureLabels[drug.nature] : '—' }}</div>
+        </div>
+
+        <div>
+            <strong>Saveurs</strong>
+            <div>
+                @for(f of drug.flavors; track f; let last = $last) {
+                {{ flavorLabels[f] }}@if(!last) {, }
+                }
+            </div>
+        </div>
+
+        <div>
+            <strong>Mouvements</strong>
+            <div>
+                @for(m of drug.movements; track m; let last = $last) {
+                {{ movementLabels[m] }}@if(!last) {, }
+                }
+            </div>
+        </div>
+
+        <div>
+            <strong>Tropisme</strong>
+            <div>
+                @for(o of drug.tropism; track o; let last = $last) {
+                {{ organLabels[o] }}@if(!last) {, }
+                }
+            </div>
+        </div>
+    </div>
+
+    @if(drug.effects?.length) {
+    <section>
+        <h3>Actions / effets</h3>
+        @for(e of drug.effects; track e) { <li>{{ e }}</li> }
+    </section>
+    }
