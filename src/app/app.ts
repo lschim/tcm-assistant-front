@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DrugViewComponent } from './drug-view/drug-view';
 import { DrugApi } from './core/api/drug.api';
@@ -11,7 +11,8 @@ import { Drug } from './core/models/drug.model';
   styleUrl: './app.css',
 })
 export class App implements OnInit {
-  constructor(private drugApi: DrugApi) {}
+  private drugApi = inject(DrugApi);
+
   protected readonly title = signal('tcm-assistant-front');
   protected drug = signal<Drug>({ id: -1, name: '' });
 
