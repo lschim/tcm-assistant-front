@@ -5,5 +5,5 @@ export const DRUG_NATURE_LABELS: Record<DrugNature, string> = {
   [DrugNature.WARM]: 'Tiède',
   [DrugNature.NEUTRAL]: 'Neutre',
   [DrugNature.COOL]: 'Frais',
-  [DrugNature.COLD]: 'Froid'
+  [DrugNature.COLD]: 'Froid',
 };

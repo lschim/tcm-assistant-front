@@ -3,5 +3,5 @@ export enum DrugNature {
   WARM = 'WARM',
   NEUTRAL = 'NEUTRAL',
   COOL = 'COOL',
-  COLD = 'COLD'
+  COLD = 'COLD',
 }

@@ -5,5 +5,5 @@ export enum DrugFlavor {
   PUNGENT = 'PUNGENT',
   SALTY = 'SALTY',
   BLAND = 'BLAND',
-  AROMATIC = 'AROMATIC'
+  AROMATIC = 'AROMATIC',
 }

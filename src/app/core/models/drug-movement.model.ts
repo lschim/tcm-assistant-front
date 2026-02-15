@@ -2,5 +2,5 @@ export enum DrugMovement {
   ASCENDING = 'ASCENDING',
   DESCENDING = 'DESCENDING',
   OUTWARD = 'OUTWARD',
-  INWARD = 'INWARD'
+  INWARD = 'INWARD',
 }

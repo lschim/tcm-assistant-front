@@ -12,5 +12,5 @@ export const ORGAN_LABELS: Record<Organ, string> = {
   [Organ.KIDNEYS]: 'Reins',
   [Organ.BLADDER]: 'Vessie',
   [Organ.PERICARDIUM]: 'Maître du Cœur',
-  [Organ.TRIPLE_BURNER]: 'Triple Réchauffeur'
+  [Organ.TRIPLE_BURNER]: 'Triple Réchauffeur',
 };

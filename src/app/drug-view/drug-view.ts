@@ -12,7 +12,7 @@ import { ORGAN_LABELS } from '../core/i18n/organ.labels';
   imports: [CommonModule],
   templateUrl: './drug-view.html',
   styleUrls: ['./drug-view.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DrugViewComponent {
   @Input({ required: true }) drug!: Drug;
