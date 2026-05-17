@@ -7,14 +7,14 @@
   (keyup.space)="toggle()"
   [class.expanded]="expanded"
 >
-  <div class="drug-name">
+  <div class="drug-name" [ngClass]="drug.nature ? 'nature-' + drug.nature : ''">
     {{ drug.name }}
   </div>
 
   <div class="drug-properties">
     <div class="prop-group prop-nature">
       @if (drug.nature) {
-        <span class="badge" [ngClass]="'nature-' + drug.nature">
+        <span class="badge nature-badge" [ngClass]="'nature-' + drug.nature">
           {{ natureLabels[drug.nature] }}
         </span>
       }

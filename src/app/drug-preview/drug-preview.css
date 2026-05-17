@@ -15,6 +15,19 @@
   font-weight: 500;
 }
 
+.drug-name.nature-HOT     { color: #b03030; }
+.drug-name.nature-WARM    { color: #b86820; }
+.drug-name.nature-NEUTRAL { color: #555; }
+.drug-name.nature-COOL    { color: #2e86c1; }
+.drug-name.nature-COLD    { color: #1a4f80; }
+
+/* Nature badges — fond très léger, texte coloré */
+.nature-HOT     { background: #fdf0f0; color: #b03030; }
+.nature-WARM    { background: #fdf5ee; color: #b86820; }
+.nature-NEUTRAL { background: #f5f5f5; color: #555; }
+.nature-COOL    { background: #eff6fc; color: #2e86c1; }
+.nature-COLD    { background: #edf2f8; color: #1a4f80; }
+
 .drug-properties {
   display: flex;
   gap: 16px;
@@ -67,10 +80,14 @@
 .tropism-SPLEEN  { background: #d4a855; color: white; }
 .tropism-STOMACH { background: #e8ca88; color: #6a4a10; }
 
-.flavor-badge {
-  background: #ede7f6;
-  color: #4a148c;
+.flavor-badge,
+.nature-badge {
   padding: 2px 8px;
   width: auto;
   border-radius: 999px;
+}
+
+.flavor-badge {
+  background: #ede7f6;
+  color: #4a148c;
 }
