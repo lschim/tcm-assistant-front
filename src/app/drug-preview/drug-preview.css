@@ -15,9 +15,17 @@
   font-weight: 500;
 }
 
-.drug-badges {
+.drug-properties {
   display: flex;
-  gap: 6px;
+  gap: 16px;
+}
+
+.prop-group {
+  display: flex;
+  gap: 4px;
+  min-width: 80px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .badge {
