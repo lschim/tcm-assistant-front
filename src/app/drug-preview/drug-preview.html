@@ -12,7 +12,7 @@
   </div>
 
   <div class="drug-properties">
-    <div class="prop-group">
+    <div class="prop-group prop-nature">
       @if (drug.nature) {
         <span class="badge" [ngClass]="'nature-' + drug.nature">
           {{ natureLabels[drug.nature] }}
@@ -20,15 +20,15 @@
       }
     </div>
 
-    <div class="prop-group">
+    <div class="prop-group prop-flavors">
       @for (f of drug.flavors; track f) {
         <span class="badge flavor-badge">{{ flavorLabels[f] }}</span>
       }
     </div>
 
-    <div class="prop-group">
+    <div class="prop-group prop-tropism">
       @for (t of drug.tropism; track t) {
-        <span class="badge" [ngClass]="'tropism-' + t">{{ organLabels[t] }}</span>
+        <span class="badge" [ngClass]="'tropism-' + t" [title]="organLabels[t]">{{ organShortLabels[t] }}</span>
       }
     </div>
   </div>

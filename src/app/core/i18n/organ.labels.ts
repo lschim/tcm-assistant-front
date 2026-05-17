@@ -14,3 +14,18 @@ export const ORGAN_LABELS: Record<Organ, string> = {
   [Organ.PERICARDIUM]: 'Maître du Cœur',
   [Organ.TRIPLE_BURNER]: 'Triple Réchauffeur',
 };
+
+export const ORGAN_SHORT_LABELS: Record<Organ, string> = {
+  [Organ.LIVER]: 'F',
+  [Organ.GALLBLADDER]: 'VB',
+  [Organ.HEART]: 'C',
+  [Organ.SMALL_INTESTINE]: 'IG',
+  [Organ.SPLEEN]: 'Rt',
+  [Organ.STOMACH]: 'E',
+  [Organ.LUNGS]: 'P',
+  [Organ.LARGE_INTESTINE]: 'GI',
+  [Organ.KIDNEYS]: 'R',
+  [Organ.BLADDER]: 'V',
+  [Organ.PERICARDIUM]: 'MC',
+  [Organ.TRIPLE_BURNER]: '3R',
+};

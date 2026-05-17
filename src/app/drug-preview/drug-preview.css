@@ -23,45 +23,54 @@
 .prop-group {
   display: flex;
   gap: 4px;
-  min-width: 80px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
 }
+
+.prop-nature  { width: 90px; }
+.prop-flavors { width: 220px; }
+.prop-tropism { width: 200px; }
 
 .badge {
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 }
 
-.tropism-LIVER {
-  background: #2e7d32;
-  color: white;
-}
-.tropism-HEART {
-  background: #1565c0;
-  color: white;
-}
-.tropism-KIDNEY {
-  background: #5d4037;
-  color: white;
-}
+/* Foie / Vésicule biliaire — vert */
+.tropism-LIVER       { background: #7db87f; color: white; }
+.tropism-GALLBLADDER { background: #a8d5aa; color: #2d5e2e; }
 
-.nature-hot {
-  background: #d32f2f;
-  color: white;
-}
-.nature-cold {
-  background: #0288d1;
-  color: white;
-}
+/* Cœur / Intestin grêle — rouge */
+.tropism-HEART           { background: #d97a7a; color: white; }
+.tropism-SMALL_INTESTINE { background: #edaaa8; color: #7a2020; }
 
-.flavor-bitter {
-  background: #6d4c41;
-  color: white;
-}
-.flavor-sweet {
-  background: #fbc02d;
-  color: black;
+/* Poumon / Gros Intestin — bleu-gris */
+.tropism-LUNGS           { background: #6a90ac; color: white; }
+.tropism-LARGE_INTESTINE { background: #c0d8e4; color: #2d4a5e; }
+
+/* Reins / Vessie — gris foncé (sans bleu) */
+.tropism-KIDNEYS { background: #4a4a4a; color: white; }
+.tropism-BLADDER { background: #888888; color: white; }
+
+/* Maître du Cœur / Triple Réchauffeur — rose-bordeaux */
+.tropism-PERICARDIUM   { background: #c47a9a; color: white; }
+.tropism-TRIPLE_BURNER { background: #dda8be; color: #6a2040; }
+
+/* Rate / Estomac — ocre (Élément Terre) */
+.tropism-SPLEEN  { background: #d4a855; color: white; }
+.tropism-STOMACH { background: #e8ca88; color: #6a4a10; }
+
+.flavor-badge {
+  background: #ede7f6;
+  color: #4a148c;
+  padding: 2px 8px;
+  width: auto;
+  border-radius: 999px;
 }
