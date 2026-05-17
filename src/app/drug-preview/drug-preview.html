@@ -1,0 +1,27 @@
+<div
+  class="drug-preview"
+  (click)="toggle()"
+  role="button"
+  tabindex="0"
+  (keyup.enter)="toggle()"
+  (keyup.space)="toggle()"
+  [class.expanded]="expanded"
+>
+  <div class="drug-name">
+    {{ drug.name }}
+  </div>
+
+  <div class="drug-badges">
+    @for (t of drug.tropism; track t) {
+      <span class="badge" [ngClass]="'tropism-' + t">
+        {{ organLabels[t] }}
+      </span>
+    }
+
+    @if (drug.nature) {
+      <span class="badge" [ngClass]="'nature-' + drug.nature">
+        {{ natureLabels[drug.nature] }}
+      </span>
+    }
+  </div>
+</div>

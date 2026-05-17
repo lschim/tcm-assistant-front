@@ -1,26 +1,13 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DrugViewComponent } from './drug-view/drug-view';
-import { DrugApi } from './core/api/drug.api';
-import { Drug } from './core/models/drug.model';
+import { DrugsView } from './drugs-view/drugs-view';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DrugViewComponent],
+  imports: [RouterOutlet, DrugsView],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App implements OnInit {
-  private drugApi = inject(DrugApi);
-
+export class App {
   protected readonly title = signal('tcm-assistant-front');
-  protected drug = signal<Drug>({ id: -1, name: '' });
-
-  ngOnInit(): void {
-    const id = 1;
-    this.drugApi.getById(id).subscribe({
-      next: (d) => this.drug.set(d),
-      error: (err) => console.error(err),
-    });
-  }
 }

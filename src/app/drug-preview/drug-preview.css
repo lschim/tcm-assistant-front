@@ -1,0 +1,59 @@
+.drug-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.drug-preview:hover {
+  background: #f8f8f8;
+}
+
+.drug-name {
+  font-weight: 500;
+}
+
+.drug-badges {
+  display: flex;
+  gap: 6px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.tropism-LIVER {
+  background: #2e7d32;
+  color: white;
+}
+.tropism-HEART {
+  background: #1565c0;
+  color: white;
+}
+.tropism-KIDNEY {
+  background: #5d4037;
+  color: white;
+}
+
+.nature-hot {
+  background: #d32f2f;
+  color: white;
+}
+.nature-cold {
+  background: #0288d1;
+  color: white;
+}
+
+.flavor-bitter {
+  background: #6d4c41;
+  color: white;
+}
+.flavor-sweet {
+  background: #fbc02d;
+  color: black;
+}
