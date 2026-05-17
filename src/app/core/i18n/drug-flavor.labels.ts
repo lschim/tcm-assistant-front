@@ -6,6 +6,6 @@ export const DRUG_FLAVOR_LABELS: Record<DrugFlavor, string> = {
   [DrugFlavor.SWEET]: 'Doux',
   [DrugFlavor.PUNGENT]: 'Piquant',
   [DrugFlavor.SALTY]: 'Salé',
-  [DrugFlavor.BLAND]: 'Fade',
+  [DrugFlavor.BLAND]: 'Insipide',
   [DrugFlavor.AROMATIC]: 'Aromatique',
 };
