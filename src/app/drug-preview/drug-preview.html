@@ -22,7 +22,9 @@
 
     <div class="prop-group prop-flavors">
       @for (f of drug.flavors; track f) {
-        <span class="badge flavor-badge" [ngClass]="'flavor-' + f">{{ flavorLabels[f] }}</span>
+        <span class="flavor-wrap" [ngClass]="'flavor-wrap-' + f">
+          <span class="badge flavor-badge" [ngClass]="'flavor-' + f">{{ flavorLabels[f] }}</span>
+        </span>
       }
     </div>
 

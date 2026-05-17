@@ -15,11 +15,12 @@
   font-weight: 500;
 }
 
-.drug-name.nature-HOT     { color: #b03030; }
-.drug-name.nature-WARM    { color: #b86820; }
-.drug-name.nature-NEUTRAL { color: #555; }
-.drug-name.nature-COOL    { color: #2e86c1; }
-.drug-name.nature-COLD    { color: #1a4f80; }
+.drug-name.nature-HOT     { color: #b03030; background: transparent; }
+.drug-name.nature-WARM    { color: #b86820; background: transparent; }
+.drug-name.nature-NEUTRAL { color: #555;    background: transparent; }
+.drug-name.nature-COOL    { color: #1a8fd1; background: transparent; }
+.drug-name.nature-COLD    { color: #1251a8; background: transparent; }
+
 
 /* Nature badges — fond très léger, texte coloré */
 .nature-HOT     { background: #fdf0f0; color: #b03030; }
@@ -54,6 +55,7 @@
   justify-content: center;
   width: 28px;
   height: 28px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* Foie / Vésicule biliaire — vert */
@@ -117,6 +119,11 @@
   color: #1a5a1a;
   border-radius: 4px;
   clip-path: polygon(0% 0%, 100% 0%, 87% 50%, 100% 100%, 0% 100%, 13% 50%);
+}
+
+.flavor-wrap-SOUR,
+.flavor-wrap-PUNGENT {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .flavor-SALTY {
