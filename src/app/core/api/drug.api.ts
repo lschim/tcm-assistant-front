@@ -14,4 +14,8 @@ export class DrugCategoryApi {
   getAll() {
     return this.http.get<Drug[]>(`${environment.apiBaseUrl}/api/drugs`);
   }
+
+  updateStars(id: number, stars: number) {
+    return this.http.patch<void>(`${environment.apiBaseUrl}/api/drugs/${id}/stars`, { stars });
+  }
 }

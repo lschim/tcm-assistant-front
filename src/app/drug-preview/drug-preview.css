@@ -21,6 +21,12 @@
 .preview-COOL:hover    { background: #e4f0fa; }
 .preview-COLD:hover    { background: #ddeaf7; }
 
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .drug-name {
   font-weight: 500;
 }

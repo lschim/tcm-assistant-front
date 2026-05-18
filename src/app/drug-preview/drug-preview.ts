@@ -5,10 +5,11 @@ import { DRUG_MOVEMENT_LABELS } from '../core/i18n/drug-movement.labels';
 import { DRUG_NATURE_LABELS } from '../core/i18n/drug-nature.labels';
 import { ORGAN_LABELS, ORGAN_SHORT_LABELS } from '../core/i18n/organ.labels';
 import { CommonModule } from '@angular/common';
+import { StarRatingComponent } from '../drug-view/star-rating/star-rating';
 
 @Component({
   selector: 'app-drug-preview',
-  imports: [CommonModule],
+  imports: [CommonModule, StarRatingComponent],
   templateUrl: './drug-preview.html',
   styleUrl: './drug-preview.css',
 })

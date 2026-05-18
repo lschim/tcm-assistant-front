@@ -8,8 +8,13 @@
   (keyup.space)="toggle()"
   [class.expanded]="expanded"
 >
-  <div class="drug-name" [ngClass]="drug.nature ? 'nature-' + drug.nature : ''">
-    {{ drug.name }}
+  <div class="name-row">
+    <div class="drug-name" [ngClass]="drug.nature ? 'nature-' + drug.nature : ''">
+      {{ drug.name }}
+    </div>
+    @if (drug.numberOfStars) {
+      <app-star-rating [value]="drug.numberOfStars" [readonly]="true" [iconSize]="16"></app-star-rating>
+    }
   </div>
 
   <div class="drug-properties">

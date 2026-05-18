@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DrugDetail } from '../core/models/drug.model';
 import { DRUG_FLAVOR_LABELS } from '../core/i18n/drug-flavor.labels';
@@ -12,16 +12,27 @@ import {
   MatCardSubtitle,
   MatCardContent,
 } from '@angular/material/card';
+import { StarRatingComponent } from './star-rating/star-rating';
+import { DrugCategoryApi } from '../core/api/drug.api';
 
 @Component({
   selector: 'app-drug-view',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardContent],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardContent, StarRatingComponent],
   templateUrl: './drug-view.html',
   styleUrls: ['./drug-view.css'],
 })
 export class DrugViewComponent {
   @Input({ required: true }) drug!: DrugDetail;
+
+  private drugApi = inject(DrugCategoryApi);
+
+  updateStars(stars: number) {
+    this.drugApi.updateStars(this.drug.id, stars).subscribe({
+      next: () => { this.drug.numberOfStars = stars; },
+      error: (err) => console.error(err),
+    });
+  }
 
   readonly natureLabels = DRUG_NATURE_LABELS;
 

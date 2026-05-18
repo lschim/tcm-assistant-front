@@ -1,0 +1,35 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star-rating.readonly {
+  cursor: default;
+}
+
+.star-wrapper {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.half {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+}
+
+.left  { left: 0; }
+.right { right: 0; }
+
+mat-icon {
+  color: #f4b400;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  user-select: none;
+}

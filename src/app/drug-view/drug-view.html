@@ -15,7 +15,10 @@
     </p>
     <p><strong>Effets :</strong> {{ drug.effects?.join('; ') || '—' }}</p>
     <p><strong>Dosage :</strong> {{ drug.dosage || '—' }}</p>
-    <p><strong>Étoiles :</strong> {{ '★'.repeat(drug.numberOfStars ?? 0) }}</p>
+    <div class="stars-row">
+      <strong>Étoiles :</strong>
+      <app-star-rating [value]="drug.numberOfStars ?? 0" (valueChange)="updateStars($event)"></app-star-rating>
+    </div>
     @if (drug.additionalNotes) {
       <p><strong>Notes :</strong> {{ drug.additionalNotes }}</p>
     }
