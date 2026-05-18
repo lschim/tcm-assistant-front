@@ -1,5 +1,6 @@
 <div
   class="drug-preview"
+  [ngClass]="drug.nature ? 'preview-' + drug.nature : ''"
   (click)="toggle()"
   role="button"
   tabindex="0"

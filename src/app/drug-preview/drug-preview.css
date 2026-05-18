@@ -7,9 +7,19 @@
   border-bottom: 1px solid #eee;
 }
 
-.drug-preview:hover {
-  background: #f8f8f8;
-}
+.drug-preview:hover { background: #f0f0f0; }
+
+.preview-HOT     { background: #fff5f5; }
+.preview-WARM    { background: #fff8f2; }
+.preview-NEUTRAL { background: #fafafa; }
+.preview-COOL    { background: #f2f8fd; }
+.preview-COLD    { background: #eef4fb; }
+
+.preview-HOT:hover     { background: #ffe8e8; }
+.preview-WARM:hover    { background: #fceee0; }
+.preview-NEUTRAL:hover { background: #f0f0f0; }
+.preview-COOL:hover    { background: #e4f0fa; }
+.preview-COLD:hover    { background: #ddeaf7; }
 
 .drug-name {
   font-weight: 500;
