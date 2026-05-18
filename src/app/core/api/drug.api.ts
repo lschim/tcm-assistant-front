@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Drug } from '../models/drug.model';
+import { Drug, DrugDetail } from '../models/drug.model';
 import { Injectable, inject } from '@angular/core';
 import { environment } from '../../../environments/environment.dev';
 
@@ -8,7 +8,7 @@ export class DrugCategoryApi {
   private http = inject(HttpClient);
 
   getById(id: number) {
-    return this.http.get<Drug>(`${environment.apiBaseUrl}/api/drugs/${id}`);
+    return this.http.get<DrugDetail>(`${environment.apiBaseUrl}/api/drugs/${id}`);
   }
 
   getAll() {

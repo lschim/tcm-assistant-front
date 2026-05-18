@@ -4,12 +4,13 @@ import {
   MatExpansionPanel,
   MatExpansionPanelHeader,
   MatExpansionPanelTitle,
-  MatExpansionPanelDescription,
 } from '@angular/material/expansion';
 import { DrugCategoryService } from '../core/services/drug-category.service';
 import { DrugService } from '../core/services/drug.service';
 import { DrugViewComponent } from '../drug-view/drug-view';
 import { DrugPreview } from '../drug-preview/drug-preview';
+import { DrugCategoryApi } from '../core/api/drug.api';
+import { DrugDetail } from '../core/models/drug.model';
 
 @Component({
   selector: 'app-drugs-view',
@@ -18,7 +19,6 @@ import { DrugPreview } from '../drug-preview/drug-preview';
     MatExpansionPanel,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
-    MatExpansionPanelDescription,
     DrugViewComponent,
     DrugPreview,
   ],
@@ -27,10 +27,13 @@ import { DrugPreview } from '../drug-preview/drug-preview';
 })
 export class DrugsView implements OnInit {
   private drugCategoryService = inject(DrugCategoryService);
+  private drugApi = inject(DrugCategoryApi);
   drugService = inject(DrugService);
   selectedDrugId = signal<number | null>(null);
+  selectedDrugDetail = signal<DrugDetail | null>(null);
 
   categories = this.drugCategoryService.categoriesSignal;
+
   ngOnInit() {
     this.drugCategoryService.load();
   }
@@ -40,6 +43,16 @@ export class DrugsView implements OnInit {
   }
 
   toggleDrug(drugId: number) {
-    this.selectedDrugId.set(this.selectedDrugId() === drugId ? null : drugId);
+    if (this.selectedDrugId() === drugId) {
+      this.selectedDrugId.set(null);
+      this.selectedDrugDetail.set(null);
+    } else {
+      this.selectedDrugId.set(drugId);
+      this.selectedDrugDetail.set(null);
+      this.drugApi.getById(drugId).subscribe({
+        next: (detail) => this.selectedDrugDetail.set(detail),
+        error: (err) => console.error(err),
+      });
+    }
   }
 }

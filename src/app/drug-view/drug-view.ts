@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Drug } from '../core/models/drug.model';
+import { DrugDetail } from '../core/models/drug.model';
 import { DRUG_FLAVOR_LABELS } from '../core/i18n/drug-flavor.labels';
 import { DRUG_MOVEMENT_LABELS } from '../core/i18n/drug-movement.labels';
 import { DRUG_NATURE_LABELS } from '../core/i18n/drug-nature.labels';
@@ -21,7 +21,7 @@ import {
   styleUrls: ['./drug-view.css'],
 })
 export class DrugViewComponent {
-  @Input({ required: true }) drug!: Drug;
+  @Input({ required: true }) drug!: DrugDetail;
 
   readonly natureLabels = DRUG_NATURE_LABELS;
 

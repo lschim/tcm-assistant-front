@@ -19,5 +19,20 @@
     @if (drug.additionalNotes) {
       <p><strong>Notes :</strong> {{ drug.additionalNotes }}</p>
     }
+    @if (drug.associations.length > 0) {
+      <div>
+        <strong>Associations :</strong>
+        <ul>
+          @for (assoc of drug.associations; track assoc.associatedDrugId) {
+            <li>
+              <span>{{ assoc.associatedDrugName }}</span>
+              @if (assoc.effects.length > 0) {
+                <span> — {{ assoc.effects.join(', ') }}</span>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+    }
   </mat-card-content>
 </mat-card>

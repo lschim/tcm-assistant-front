@@ -20,3 +20,13 @@ export interface Drug {
   categoryId?: number;
   additionalNotes?: string;
 }
+
+export interface DrugAssociation {
+  associatedDrugId: number;
+  associatedDrugName: string;
+  effects: string[];
+}
+
+export interface DrugDetail extends Drug {
+  associations: DrugAssociation[];
+}
