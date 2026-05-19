@@ -6,6 +6,9 @@
 
 .page-header {
   padding: 32px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .page-header h1 {
@@ -13,6 +16,40 @@
   font-size: 24px;
   font-weight: 500;
   color: #333;
+  flex-shrink: 0;
+}
+
+.search-field {
+  flex: 1;
+  max-width: 360px;
+}
+
+.search-results {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-result-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.result-category {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  padding: 6px 12px 0;
+}
+
+.no-results {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  margin: 0;
 }
 
 .accordion-container {

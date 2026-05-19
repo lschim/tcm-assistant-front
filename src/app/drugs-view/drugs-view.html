@@ -1,33 +1,56 @@
 <div class="page">
   <header class="page-header">
     <h1>TCM Assistant</h1>
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Rechercher un ingrédient</mat-label>
+      <input matInput (input)="onSearch($event)" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
   </header>
 
   <div class="accordion-container">
-<mat-accordion multi>
-  @for (category of categories(); track category.id) {
-    <mat-expansion-panel (opened)="onOpenCategory(category.id)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          {{ category.name }}
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      @if (drugService.getDrugsSignal(category.id)(); as drugs) {
-        @for (drug of drugs; track drug.id) {
-          <app-drug-preview
-            [drug]="drug"
-            [expanded]="selectedDrugId() === drug.id"
-            (userClickPreview)="toggleDrug(drug.id)"
-          >
-          </app-drug-preview>
-          @if (selectedDrugId() === drug.id && selectedDrugDetail()) {
-            <app-drug-view [drug]="selectedDrugDetail()!"></app-drug-view>
-          }
+    @if (searchResults(); as results) {
+      <div class="search-results">
+        @if (results.length === 0) {
+          <p class="no-results">Aucun ingrédient trouvé.</p>
         }
-      }
-    </mat-expansion-panel>
-  }
-</mat-accordion>
+        @for (drug of results; track drug.id) {
+          <div class="search-result-item">
+            <span class="result-category">{{ categoryName(drug.categoryId) }}</span>
+            <app-drug-preview
+              [drug]="drug"
+              [expanded]="selectedDrugId() === drug.id"
+              (userClickPreview)="toggleDrug(drug.id)"
+            ></app-drug-preview>
+            @if (selectedDrugId() === drug.id && selectedDrugDetail()) {
+              <app-drug-view [drug]="selectedDrugDetail()!"></app-drug-view>
+            }
+          </div>
+        }
+      </div>
+    } @else {
+      <mat-accordion multi>
+        @for (category of categories(); track category.id) {
+          <mat-expansion-panel (opened)="onOpenCategory(category.id)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{ category.name }}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            @if (drugService.getDrugsSignal(category.id)(); as drugs) {
+              @for (drug of drugs; track drug.id) {
+                <app-drug-preview
+                  [drug]="drug"
+                  [expanded]="selectedDrugId() === drug.id"
+                  (userClickPreview)="toggleDrug(drug.id)"
+                ></app-drug-preview>
+                @if (selectedDrugId() === drug.id && selectedDrugDetail()) {
+                  <app-drug-view [drug]="selectedDrugDetail()!"></app-drug-view>
+                }
+              }
+            }
+          </mat-expansion-panel>
+        }
+      </mat-accordion>
+    }
   </div>
 </div>

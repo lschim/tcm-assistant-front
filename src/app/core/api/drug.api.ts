@@ -15,6 +15,12 @@ export class DrugCategoryApi {
     return this.http.get<Drug[]>(`${environment.apiBaseUrl}/api/drugs`);
   }
 
+  search(query: string) {
+    return this.http.get<Drug[]>(`${environment.apiBaseUrl}/api/drugs`, {
+      params: { search: query },
+    });
+  }
+
   updateStars(id: number, stars: number) {
     return this.http.patch<void>(`${environment.apiBaseUrl}/api/drugs/${id}/stars`, { stars });
   }
